@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Happy, Holi! - A-Frame</title>
+    <meta name="description" content="Happy Holi">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component/dist/aframe-text-geometry-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+        <a-mixin id="boldFont" text="font: #optimerBoldFont"></a-mixin>
+      </a-assets>
+      <a-camera look-controls wasd-controls="fly: true"></a-camera>
+      <a-entity material="color: red;" text-geometry="value: Happy Holi!; font: #optimerBoldFont" position="-2 3 -4"></a-entity>
+      <a-cylinder position="-2 1.5 -3" rotation="0 0 -45" radius="0.25" height="1.5" color="#FFC65D" shadow>
+        <a-ring position="-0.125 -0.875 0" radius-inner="0.1" radius-outer="0.12"></a-ring>    
+        <a-ring position="0.125 -0.875 0" radius-inner="0.1" radius-outer="0.12"></a-ring>
+        <a-cone position="0 0.88 0" radius-bottom="0.25" radius-top="0" height="0.25">
+          <a-entity position="0 0.25 0" particle-system="blending: 1; size: 0.125; color: #FF0000"></a-entity>
+        </a-cone>
+      </a-cylinder>
+      <a-cylinder position="2 1.5 -3" rotation="0 0 45" radius="0.25" height="1.5" color="#FFC65D" shadow>
+          <a-ring position="-0.125 -0.875 0" radius-inner="0.1" radius-outer="0.12"></a-ring>    
+          <a-ring position="0.125 -0.875 0" radius-inner="0.1" radius-outer="0.12"></a-ring>
+          <a-cone position="0 0.88 0" radius-bottom="0.25" radius-top="0" height="0.25">
+              <a-entity position="0 0.25 0" particle-system="blending: 1; size: 0.125; color: #FF0000"></a-entity>
+          </a-cone>            
+        </a-cylinder>
+      
+      <a-plane rotation="-90 0 0" width="30" height="30" color="#085008"></a-plane>
+      <a-sky color="#87CEEB"></a-sky>
+    </a-scene>
+  </body>
+</html>
